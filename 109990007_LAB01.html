@@ -9,6 +9,12 @@
         background-color: rgb(245, 75, 8);
         color: black;
       }
+      del {
+          background-color: blueviolet;
+      }
+      ins {
+          background-color: coral;
+      }
     p{
         text-align: justify;
         color: darkgreen;
@@ -17,6 +23,24 @@
     body{
         width: 80%;
         align-content:center
+    }
+    .content {
+        overflow: auto;
+        border: 3px;
+        resize: both;
+        width: 70%;
+    }
+    .div-1 {
+        background-color: aquamarine;
+        float: right;
+        width: 50%;
+
+    }
+    .div-2 {
+        float: left;
+        width: 50%;
+        background-color: darkorange;
+        color: aquamarine;
     }
       </style>
     <title>LAB 01</title>
@@ -33,7 +57,7 @@
             Museum, and the Chiang Kai-shek Memorial Hall are in close proximity to Taipei Tech.</p>
 
     <h4>History & Philosophy</h4>
-            <p>Established in 1912, Taipei Tech is among one of the oldest universities in Taiwan. It was <mark><span style="color: cadetblue;"><em><strong>1<sup>st</sup></strong></em></span></mark> 
+            <p>Established in 1912, Taipei Tech is among one of the <del>newest</del> <ins>oldest</ins> universities in Taiwan. It was <mark><span style="color: cadetblue;"><em><strong>1<sup>st</sup></strong></em></span></mark> 
                 established during the Japanese Colonial Period as the Auxiliary Industrial Institute of the 
                 Education Affairs Office of the Civil Administration Department. The Institute consisted of only 
                 three departments (Woodcraft, Metalwork and Electrical Engineering) ushered in an era of industrial 
@@ -50,5 +74,24 @@
     <h4 id="section2">Taipei Tech Graduates</h4>
     <p>Taipei Tech graduates are the top favorite employees among Taiwan’s top 1000 enterprises, as declared by Cheers magazine. Taipei Tech is also renowned as top World 
         Green University. In UI Green Metrics University Rankings, Taipei Tech is ranked as the 1st Green University in Taiwan and the 6th in world in the city center catergory.</p>
+        <div class="content">
+        <div class="div-1">
+            <h4>Taipei Tech Alumni</h4>
+            <ul>
+                <li>Alumni 1</li>
+                <li>Alumni 2</li>
+                <li>Alumni 3</li>
+            </ul>
+        </div>
+        <div class="div-2">
+            <h4>Binatang</h4>
+            <ol>
+                <li>anjing</li>
+                <li>babi</li>
+                <li>monyet</li>
+            </ol>
+                
+             </div>
+        </div>
 </body>
 </html>
