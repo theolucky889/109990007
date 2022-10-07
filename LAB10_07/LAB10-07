@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    body{
+        width: 60%;
+        align-content:center
+        
+            }
+    p{
+        text-align: justify;
+    }
+    
+    .div-1 {
+        background-color: rgb(122, 131, 128);
+        float: left;
+        width: 50%;
+        margin: 0%;
+
+    }
+    .div-2 {
+        float: right;
+        width: 50%;
+        background-color: rgb(214, 205, 193);
+        color: rgb(0, 0, 0);
+    }
+    .ol-li-1{
+        color: aqua;
+        text-decoration-style: dotted;
+    }
+    .ol-li-2{
+        color: chartreuse;
+    }
+
+    .ol-li-3{
+        color: rgb(250, 157, 237);
+    }
+    h1{
+        text-align: center;
+    }
+    .navbar{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: aquamarine;
+    }
+    .li-navbar{
+        float: left;
+        
+    }
+    .li-navbar a{
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    .li-navbar a:hover{
+        background-color: darkcyan;
+    }
+    .ul-1{
+        list-style-type: square;
+        list-style-position: outside;
+    }
+    .li-1{
+        list-style-position: inside;
+        list-style-type: armenian;
+    }
+    </style>
+<title>Biography</title>
+</head>
+
+<body>
+    <h1>Biography</h1>
+    <ul class="navbar">
+        <li class="li-navbar"><a href="LAB10-07.html">Home</a></li>
+        <li class="li-navbar"><a href="biography.html">Biography</a></li>
+        <li class="li-navbar"><a href="contact.html">Contact</a></li>
+        <li class="li-navbar"><a href="history.html">History</a></li>
+        <li class="li-navbar"><a href="about.html">About</a></li>
+    </ul>
+    <ul class="ul-1">
+        <li>Coffee</li>
+        <li class="li-1">Americano</li>
+        <li class="li-1">Latte</li>
+        <li class="li-1">Flat White</li>
+    </ul>
+    <div class="div-common">
+        <div class="div-1">
+    <img src="https://rigaon.lv/wp-content/themes/noo-citilights/assets/images/default-avatar.png" alt="Profile Picture" style="width: 300px; height: 300px;">
+    <h2>Theodore Lucky Tendy</h2>
+        <p><strong>University Student</strong></p>
+        <p><a href="mailto:theolucky889@gmail.com"><em>theolucky889@gmail.com</em></a></p>
+        <p><a href="tel:+886981828888"><em>+886981828888</em></a></p>
+        <a href="#hobbies">Skip to Hobbies</a>
+    </div>
+
+    <div class="div-2">
+        <h2>Biography</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <u>Nam pellentesque convallis lobortis.</u> Cras sed dapibus leo. Fusce ut egestas lorem. Quisque euismod nec nisl vitae ornare. 
+            Aliquam metus nibh, volutpat sit amet lorem vitae, sollicitudin luctus sem. Quisque auctor mauris sit amet enim blandit lobortis. Proin sodales finibus odio eu finibus. Sed eu est 
+            maximus, dignissim nunc dictum, congue dolor. Cras euismod diam ac justo consequat, tincidunt tincidunt dolor egestas. Fusce congue ultrices nulla, ac pharetra turpis fringilla 
+            ultrices. Nullam eu varius neque. Nam et sem sem. Nulla ut turpis ut erat facilisis feugiat. Sed ultricies augue in velit bibendum, vel molestie nulla dictum. Sed sed ipsum orci.</p>
+    <br><hr>    
+        <h2>School History</h2>
+        <ul>
+            <li><a href="https://svp.sch.id/">Victory Plus</a></li>
+            <li><a href="https://bpkpenabur.or.id/">BPK Penabur</a></li>
+        </ul>
+<br> <hr>
+        <h2 id="hobbies">Hobbies</h2>
+        <ol>
+            <li class="ol-li-1">Eat</li>
+            <li class="ol-li-2">Sleep</li>
+            <li class="ol-li-3">Repeat</li>
+        </ol>
+<br><hr>
+        <h2>Research Interest</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque convallis lobortis. Cras sed dapibus leo. Fusce ut egestas lorem. Quisque euismod nec nisl vitae ornare. 
+        Aliquam metus nibh, volutpat sit amet lorem vitae, sollicitudin luctus sem. <strong>Quisque auctor mauris sit</strong> amet enim blandit lobortis. Proin sodales finibus odio eu finibus. Sed eu est 
+        maximus, dignissim nunc dictum, congue dolor. Cras euismod diam ac justo consequat, tincidunt tincidunt dolor egestas. Fusce congue ultrices nulla, ac pharetra turpis fringilla 
+        ultrices. Nullam eu varius neque. Nam et sem sem. Nulla ut turpis ut erat facilisis feugiat. Sed ultricies augue in velit bibendum, vel molestie nulla dictum. Sed sed ipsum orci.</p>
+        <a href="https://www.google.com/">
+            <img alt="Qries" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/24px-Google_%22G%22_Logo.svg.png"
+            width="70" height="70">
+    </div>
+</div>
+    </body>
+
+</html>
