@@ -76,10 +76,10 @@
     <h1>Biography</h1>
     <ul class="navbar">
         <li class="li-navbar"><a href="LAB10-07.html">Home</a></li>
-        <li class="li-navbar"><a href="biography.html">Biography</a></li>
-        <li class="li-navbar"><a href="contact.html">Contact</a></li>
+        <li class="li-navbar"><a href="bio/biography.html">Biography</a></li>
+        <li class="li-navbar"><a href="bio/contact/contact.html">Contact</a></li>
         <li class="li-navbar"><a href="history.html">History</a></li>
-        <li class="li-navbar"><a href="about.html">About</a></li>
+        <li class="li-navbar"><a href="bio/contact/about/about.html">About</a></li>
     </ul>
     <ul class="ul-1">
         <li>Coffee</li>
