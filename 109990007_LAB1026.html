@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .middle{
+        vertical-align: bottom;
+        }
+
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 2px solid;
+  text-align: left;
+  padding: 8px;
+  border-collapse: collapse;
+  border-color: rgb(0, 0, 0);
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.day{
+    background-color: rgba(46, 46, 46, 0.781);
+    color: white;
+}
+.business{
+    background-color: greenyellow;
+    text-align: center;
+}
+.math{
+    background-color: lightblue;
+    text-align: center;
+}
+.physics{
+    background-color: sandybrown;
+    text-align: center;
+}
+.breakfast{
+    text-align: center;
+}
+    </style>
+    <title>LAB10_26</title>
+</head>
+<body>
+<table>
+    <tr class="day">
+      <th>Time</th>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wed</th>
+    </tr>
+    <tr>
+      <td>7 : 30 AM</td>
+      <td class="breakfast">Breakfast</td>
+      <td class="breakfast">Breakfast</td>
+      <td class="breakfast">Breakfast</td>
+    </tr>
+    <tr>
+      <td>8 : 00 AM</td>
+      <td rowspan="2" class="business"><p>Business: Lecture</p>
+        <p>Bldg B, Rm 256</p> 
+    </td>
+      <td rowspan="3" class="physics"><p>Physics: Lab</p>
+                      <p>Bldg J, Rm 309</p>  
+    </td>
+    <td rowspan="2" class="business"><p>Business: Lecture</p>
+        <p>Bldg B, Rm 256</p> 
+        </td>
+    </tr>
+    <tr>
+        <td>8 : 30 AM</td>
+    </tr>
+    <tr>
+      <td>9 : 00 AM</td>
+      <td rowspan="2" class="math"><p>Applied Math</p>
+          <p>Bldg H, Rm 100</p>        
+    </td>
+
+      <td rowspan="2" class="math"><p>Applied Math</p>
+        <p>Bldg H, Rm 100</p>        
+  </td>
+    </tr>
+    <tr>
+        <td>9 : 30 AM</td>
+    </tr>
+    <td>10 : 00 AM</td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+</tr>
+<tr>
+    <td>10 : 30 AM</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>11 : 00 AM</td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+</tr>
+<tr>
+    <td>11 : 30 AM</td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+</tr>
+  </table>
+  
+
+</body>
+</html>
