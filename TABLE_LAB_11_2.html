@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB112</title>
+    <style>
+        table, th, td{
+        border: 1px solid black;
+        
+        }
+
+    </style>
+
+</head>
+<body>
+
+<table id="table1" style="width:100px">
+    <tr>
+        <th class="subject">Math</th>
+        <th class="subject">English</th>
+        <th class="subject">Programming</th>
+    </tr>
+    <tr>
+        <th class="score">90</th>
+        <th class="score">60</th>
+        <th class="score">80</th>
+    </tr>
+    <tr>
+        <th class="score">80</th>
+        <th class="score">86</th>
+        <th class="score">98</th>
+    </tr>
+</table>
+<script>
+    function tableFunc200() {
+        document.getElementById("table1").style.cssText = "width:200px";
+    }
+    function tableFunc500() {
+        document.getElementById("table1").style.cssText = "width:500px";
+    }
+
+    function tableBorder1() {
+        document.getElementById("table1").style.cssText = "border-spacing:1px";
+    }
+    function tableBorder10() {
+        document.getElementById("table1").style.cssText = "border-spacing:10px";
+    }
+    function tableBorder20() {
+        document.getElementById("table1").style.cssText = "border-spacing:20px";
+    }
+
+    function tableColor1() {
+        document.getElementById("table1").style.cssText = "background-color: green";
+    }
+    function tableColor2() {
+        document.getElementById("table1").style.cssText = "background-color: red";
+    }
+    function tableColor3() {
+        document.getElementById("table1").style.cssText = "background-color: skyblue";
+    }
+    function tableColor4() {
+        document.getElementById("table1").style.cssText = "background-color: yellow";
+    }
+    function reset() {
+        document.getElementById("table1").style.cssText = "background-color: white; width:200px; border-spacing:1px";
+    }
+</script>
+<br>
+<p>Change the Table width</p>
+<!--button-->
+<input type="button" onclick="tableFunc200()" value="200px">
+<input type="button" onclick="tableFunc500()" value="500px">
+
+<p>Change The Border and the Spacing Width</p>
+<!--button-->
+<input type="button" onclick="tableBorder1()" value="1px">
+<input type="button" onclick="tableBorder10()" value="10px">
+<input type="button" onclick="tableBorder20()" value="20px">
+
+<p>Change The table color</p>
+<!--button-->
+<input type="button" onclick="tableColor1()" style="background-color: green;" value="     ">
+<input type="button" onclick="tableColor2()" style="background-color: red;" value="     ">
+<input type="button" onclick="tableColor3()" style="background-color: skyblue;" value="     ">
+<input type="button" onclick="tableColor4()" style="background-color: yellow;" value="     ">
+
+<p>reset</p>
+<input type="button" onclick="reset()" value="RESET">
+</body>
+</html>
