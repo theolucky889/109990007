@@ -124,3 +124,137 @@ const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
 const grid = 32;
 const tetrominoSequence = [];
+
+//keeps track of what is in canvas(10x20 with few row is offscreen) using 2d array
+const playfield = [];
+
+//populate empty space
+for (let row = -2; row < 20; row++) {
+    playfield[row] = [];
+
+    for (let col = 0; col < 10; col++) {
+        playfield[row][col] = 0;
+    }
+}
+
+//draw the Tetromino Shapes
+// source = https://tetris.fandom.com/wiki/SRS
+const tetrominos = {
+    'C': [
+        [1,1,1,1],
+        [1,0,0,0],
+        [1,0,0,0],
+        [1,1,1,1]
+      ] ,
+    'S': [
+        [1,1,1,1,1],
+        [1,0,0,0,0],
+        [1,1,1,1,1],
+        [0,0,0,0,1],
+        [1,1,1,1,1]
+      ],
+    'I': [
+      [0,1,0,0],
+      [0,1,0,0],
+      [0,1,0,0],
+      [0,1,0,0]
+    ],
+    'E': [
+        [1,1,1,1,1],
+        [1,0,0,0,0],
+        [1,1,1,1,1],
+        [1,0,0,0,0],
+        [1,1,1,1,1]
+    ],
+    'J': [
+      [1,0,0],
+      [1,1,1],
+      [0,0,0],
+    ],
+    'L': [
+      [0,0,1],
+      [1,1,1],
+      [0,0,0],
+    ],
+    'O': [
+      [1,1],
+      [1,1],
+    ],
+    'Z': [
+      [1,1,0],
+      [0,1,1],
+      [0,0,0],
+    ],
+    'T': [
+      [0,1,0],
+      [1,1,1],
+      [0,0,0],
+    ]
+  };
+
+  //colors of each tetromino
+  const colors = {
+    'C': 'red',
+    'S': 'green',
+    'I': 'blue',
+    'E': 'purple',
+    'J': 'yellow',
+    'L': 'cyan',
+    'Z': 'orange',
+    'T': 'brown',
+    'O': 'pink',
+  };
+
+  let count = 0;
+  let tetromino = getNextTetromino();
+  let rAF = null; //keep track of animation frame
+  let gameOver = false;
+
+  //game loop
+  function loop() {
+    rAF = requestAnimationFrame(loop);
+    context.clearRect(0,0,canvas.width,canvas.height);
+
+    //Playfield
+    for (let row = 0; row < 20; row++) {
+        for (let col = 0; col < 10; col++) {
+            if (playfield[row][col]) {
+                const name = playfield[row][col];
+                context.fillStyle = colors[name];
+        
+                //Grid Effect
+                context.fillRect(col * grid, row * grid, grid-1, grid-1);
+            }
+        }
+    }
+
+    //draw active tetromino
+    if (tetromino) {
+
+        //fall every 35 frame
+        if (++count > 35) {
+            tetromino.row++;
+            count = 0;
+
+            //place tetromino if hit something
+            if (!isValidMove(tetromino.matrix, tetromino.row, tetromino.col)) {
+                tetromino.row--;
+                placeTetromino();
+            }
+        }
+
+        context.fillStyle = colors[tetromino.name];
+        
+        for (let row = 0; row < tetromino.matrix.length; row++) {
+            for (let col = 0; col < tetromino.matrix[row].length; col++) {
+                if (tetromino.matrix[row][col]) {
+
+                    //Grid Effect
+                context.fillRect((tetromino.col + col) * grid, (tetromino.row + row) * grid, grid-1, grid-1);
+                }
+            }
+        } 
+    }
+  }
+  
+  
