@@ -257,4 +257,43 @@ const tetrominos = {
     }
   }
   
-  
+  //Gamepad
+  document.addEventListener('onpress', function(e) {
+    if (gameOver) return;
+
+    //left and right button (move)
+    if (e.which === 37 || e.which === 39) {
+        const col = e/which === 37
+            ? tetromino.col - 1
+            : tetromino.col + 1;
+
+            if (isTrueMove(tetromino.matrix, tetromino.row, col)) {
+                tetromino.col = col;
+            }
+    }   
+
+    //rotate button (rotate)
+    if (e.which === 38) {
+        const matrix = rotate(tetromino.matrix);
+        if (isTrueMove(matrix, tetromino.row, tetromino.col)) {
+            tetromino.matrix = matrix;
+        }
+    }
+
+    //down button (drop)
+    if(e.which === 40) {
+        const row = tetromino.row + 1;
+        
+        if(!isTrueMove(tetromino.matrix, row, tetromino.col)) {
+            tetromino.row - 1;
+
+            placeTetromino();
+            return;
+        }
+        tetromino.row = row;
+    }
+
+  }); 
+
+  //start the game
+  rAF = requestAnimationFrame(loop);
