@@ -141,30 +141,29 @@ for (let row = -2; row < 20; row++) {
 // source = https://tetris.fandom.com/wiki/SRS
 const tetrominos = {
     'C': [
-        [1,1,1,1],
-        [1,0,0,0],
-        [1,0,0,0],
-        [1,1,1,1]
+        [1,1,1],
+        [1,0,0],
+        [1,1,1]
       ] ,
     'S': [
-        [1,1,1,1,1],
-        [1,0,0,0,0],
-        [1,1,1,1,1],
-        [0,0,0,0,1],
-        [1,1,1,1,1]
+        [1,1,1],
+        [1,0,0],
+        [1,1,1],
+        [0,0,1],
+        [1,1,1]
       ],
     'I': [
-      [0,1,0,0],
-      [0,1,0,0],
-      [0,1,0,0],
-      [0,1,0,0]
+      [0,1,0],
+      [0,1,0],
+      [0,1,0],
+      [0,1,0]
     ],
     'E': [
-        [1,1,1,1,1],
-        [1,0,0,0,0],
-        [1,1,1,1,1],
-        [1,0,0,0,0],
-        [1,1,1,1,1]
+        [1,1,1],
+        [1,0,0],
+        [1,1,1],
+        [1,0,0],
+        [1,1,1]
     ],
     'J': [
       [1,0,0],
@@ -258,12 +257,12 @@ const tetrominos = {
   }
   
   //Gamepad
-  document.addEventListener('onpress', function(e) {
+  document.addEventListener('keydown', function(e) {
     if (gameOver) return;
 
     //left and right button (move)
     if (e.which === 37 || e.which === 39) {
-        const col = e/which === 37
+        const col = e.which === 37
             ? tetromino.col - 1
             : tetromino.col + 1;
 
