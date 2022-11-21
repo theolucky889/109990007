@@ -12,7 +12,7 @@ function generateSequence() {
     const sequence = ['C', 'S', 'I', 'E', 'L', 'O', 'T', 'Z']
 
     while (sequence.length) {
-        const rand = getrandomInt(0, sequence.length -1);
+        const rand = getRandomInt(0, sequence.length - 1);
         const name = sequence.splice(rand, 1)[0];
         tetrominoSequence.push(name);
     }
@@ -51,7 +51,7 @@ function rotate(matrix) {
 }
 
 //check if the the new matrix/row/col is true
-function isTrueMove(matrix, cellRow, cellCol) {
+function isValidMove(matrix, cellRow, cellCol) {
     for (let row = 0; row < matrix.length; row++) {
         for (let col = 0; col < matrix[row].length; col++) {
             if (matrix[row][col] && (
@@ -267,7 +267,7 @@ const tetrominos = {
             ? tetromino.col - 1
             : tetromino.col + 1;
 
-            if (isTrueMove(tetromino.matrix, tetromino.row, col)) {
+            if (isValidMove(tetromino.matrix, tetromino.row, col)) {
                 tetromino.col = col;
             }
     }   
@@ -275,7 +275,7 @@ const tetrominos = {
     //rotate button (rotate)
     if (e.which === 38) {
         const matrix = rotate(tetromino.matrix);
-        if (isTrueMove(matrix, tetromino.row, tetromino.col)) {
+        if (isValidMove(matrix, tetromino.row, tetromino.col)) {
             tetromino.matrix = matrix;
         }
     }
@@ -284,7 +284,7 @@ const tetrominos = {
     if(e.which === 40) {
         const row = tetromino.row + 1;
         
-        if(!isTrueMove(tetromino.matrix, row, tetromino.col)) {
+        if(!isValidMove(tetromino.matrix, row, tetromino.col)) {
             tetromino.row - 1;
 
             placeTetromino();
