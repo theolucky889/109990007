@@ -38,7 +38,7 @@ return {
     name: name,         //name of the Shape/Piece
     matrix: matrix,     //Shape Rotation
     row: row,           //Row of shape (starts offscreen)
-    col: col,           //Collumn   
+    col: col,           //Column   
     };
 }
 
@@ -256,43 +256,64 @@ const tetrominos = {
     }
   }
   
-  //Gamepad
+  //Keyboard Movement
   document.addEventListener('keydown', function(e) {
     if (gameOver) return;
-
-    //left and right button (move)
+  
+    // left and right arrow keys (move)
     if (e.which === 37 || e.which === 39) {
-        const col = e.which === 37
-            ? tetromino.col - 1
-            : tetromino.col + 1;
-
-            if (isValidMove(tetromino.matrix, tetromino.row, col)) {
-                tetromino.col = col;
-            }
-    }   
-
-    //rotate button (rotate)
+      const col = e.which === 37
+        ? tetromino.col - 1
+        : tetromino.col + 1;
+  
+      if (isValidMove(tetromino.matrix, tetromino.row, col)) {
+        tetromino.col = col;
+      }
+    }
+  
+    // up arrow key (rotate)
     if (e.which === 38) {
-        const matrix = rotate(tetromino.matrix);
-        if (isValidMove(matrix, tetromino.row, tetromino.col)) {
-            tetromino.matrix = matrix;
-        }
+      const matrix = rotate(tetromino.matrix);
+      if (isValidMove(matrix, tetromino.row, tetromino.col)) {
+        tetromino.matrix = matrix;
+      }
     }
-
-    //down button (drop)
+  
+    // down arrow key (drop)
     if(e.which === 40) {
-        const row = tetromino.row + 1;
-        
-        if(!isValidMove(tetromino.matrix, row, tetromino.col)) {
-            tetromino.row - 1;
-
-            placeTetromino();
-            return;
-        }
-        tetromino.row = row;
+      const row = tetromino.row + 1;
+  
+      if (!isValidMove(tetromino.matrix, row, tetromino.col)) {
+        tetromino.row = row - 1;
+  
+        placeTetromino();
+        return;
+      }
+  
+      tetromino.row = row;
     }
+  });
 
-  }); 
+  //Gamepad Movement
+  //move right
+ function moveRight() {
+    const col = tetromino.col + 1;
+    tetromino.col + 1;
+
+    if (isValidMove(tetromino.matrix, tetromino.row, col)) {
+        tetromino.col = col;   
+    }
+ }
+
+ //move left
+ function moveLeft() {
+    const col = tetromino.col - 1;
+    tetromino.col - 1;
+
+    if(isValidMove(tetromino.matrix, tetromino.row, col)) {
+        tetromino.col = col;
+    }
+ }
 
   //start the game
   rAF = requestAnimationFrame(loop);
