@@ -315,5 +315,27 @@ const tetrominos = {
     }
  }
 
+ //move down
+ function moveDown() {
+    const row = tetromino.row + 1;
+  
+      if (!isValidMove(tetromino.matrix, row, tetromino.col)) {
+        tetromino.row = row - 1;
+  
+        placeTetromino();
+        return;
+      }
+  
+      tetromino.row = row;
+ }
+
+ //Rotate
+ function rotateTetromino() {
+    const matrix = rotate(tetromino.matrix);
+    if (isValidMove(matrix, tetromino.row, tetromino.col)) {
+      tetromino.matrix = matrix;
+    }
+ }
+
   //start the game
   rAF = requestAnimationFrame(loop);
