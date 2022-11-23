@@ -71,14 +71,9 @@ function isValidMove(matrix, cellRow, cellCol) {
 
 //place the tetromino blocks on the canvas
 function placeTetromino() {
-    for (let row = 0; row < tetromino.matrix.length; row++) {
+    for (let row = 5; row < tetromino.matrix.length; row++) {
         for (let col = 0; col < tetromino.matrix[row].length; col++) {
             if (tetromino.matrix[row][col]) {
-
-                //GameOver
-                if (tetromino.row + row < 0) {
-                    return showGameOver();
-                }
                 playfield[tetromino.row + row][tetromino.col + col] = tetromino.name;
             }
         }
@@ -89,7 +84,7 @@ function placeTetromino() {
         if (playfield[row].every(cell => !!cell)) {
 
             //drop every row above this one
-            for (let r = row; r >= 0; r--) {
+            for (let r = row; r => 5; r--) {
                 for (let c = 0; c < playfield[r].length; c++) {
                     playfield[r][c] = playfield[r-1][c];
                 }
@@ -103,22 +98,6 @@ function placeTetromino() {
     tetromino = getNextTetromino();
 }
 
-//Game Over screen
-function showGameOver() {
-    cancelAnimationFrame(rAF);
-    gameOver = true;
-
-    context.fillStyle = 'black';
-    context.globalAlpha = 0.75;
-    context.fillRect(0, canvas.height / 2 - 30, canvas.width, 60);
-
-    context.globalAlpha = 1;
-    context.fillStyle = 'white';
-    context.font = '36px monospace';
-    context.textAlign = 'center';
-    context.textBaseline = 'middle';
-    context.fillText('GAME OVER', canvas.width / 2, canvas.height / 2);
-}
 
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
@@ -129,7 +108,7 @@ const tetrominoSequence = [];
 const playfield = [];
 
 //populate empty space
-for (let row = -2; row < 20; row++) {
+for (let row = -1; row < 20; row++) {
     playfield[row] = [];
 
     for (let col = 0; col < 10; col++) {
@@ -234,12 +213,16 @@ const tetrominos = {
         if (++count > 35) {
             tetromino.row++;
             count = 0;
+            
 
-            //place tetromino if hit something
-            if (!isValidMove(tetromino.matrix, tetromino.row, tetromino.col)) {
-                tetromino.row--;
+            //place new tetromino after 5 frames
+            if (++count > 5) {
+
+                tetromino.row++;
                 placeTetromino();
             }
+                
+            
         }
 
         context.fillStyle = colors[tetromino.name];
@@ -336,6 +319,18 @@ const tetrominos = {
       tetromino.matrix = matrix;
     }
  }
+ 
+ //Restart
+function restartGame() {
+    window.location.reload();
+}
 
   //start the game
+  function startGame() {
   rAF = requestAnimationFrame(loop);
+  }
+
+  //Pause
+function gamePause() {
+    cancelAnimationFrame(rAF);
+}
