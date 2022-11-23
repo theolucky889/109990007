@@ -12,4 +12,5 @@ html, body {
 
   canvas {
     border: 1px solid white;
+    background: black;
   }
