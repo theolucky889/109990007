@@ -4,7 +4,7 @@ html, body {
   }
 
   body {
-    background: black;
+    background: rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,4 +13,69 @@ html, body {
   canvas {
     border: 1px solid white;
     background: black;
+    color: white;
   }
+
+  p {
+    color: white;
+    text-align: center;
+  }
+  
+  .left{
+    color: chartreuse;
+  }
+
+  .left:hover {
+    background-color: bisque;
+  }
+
+  .right{
+    background-color: rgb(107, 116, 218);
+  }
+
+  .right:hover {
+    background-color: bisque;
+  }
+
+  .down{
+    background-color: rgb(34, 156, 140);
+  }
+
+  .down:hover {
+    background-color: bisque;
+  }
+
+  .rotate{
+    background-color: rgb(255, 0, 200);
+  }
+
+  .rotate:hover {
+    background-color: bisque;
+  }
+
+  .start{
+    background-color: rgb(255, 149, 0);
+  }
+
+  .start:hover {
+    background-color: bisque;
+  }
+
+  .restart{
+    background-color: rgb(255, 0, 38);
+  }
+
+  .restart:hover {
+    background-color: bisque;
+  }
+
+  .pause{
+    background-color: rgb(157, 0, 255);
+  }
+
+  .pause:hover {
+    background-color: bisque;
+  }
+
+  
+
