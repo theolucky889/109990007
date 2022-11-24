@@ -58,9 +58,12 @@ function isValidMove(matrix, cellRow, cellCol) {
                 //outside game bounds
                 cellCol + col < 0 ||
                 cellCol + col >= playfield[0].length ||
-                cellRow + row >= playfield.length ||
+                cellRow + row >= 6 ||
                 //If collides with other piece
-                playfield[cellRow + row][cellCol + col])) {
+                playfield[cellRow + 7][cellCol + col])
+                    //test
+                    //|| cellRow + row >= 7
+                    ) {
                     return false;
             }
         }
@@ -80,7 +83,7 @@ function placeTetromino() {
     }
 
     //check for line clears from the most bottom until up
-    for (let row = playfield.length - 1; row >= 0;) {
+    for (let row = playfield.length - 5; row >= 0;) {
         if (playfield[row].every(cell => !!cell)) {
 
             //drop every row above this one
@@ -115,6 +118,7 @@ for (let row = -1; row < 20; row++) {
         playfield[row][col] = 0;
     }
 }
+
 
 //draw the Tetromino Shapes
 // source = https://tetris.fandom.com/wiki/SRS
@@ -215,15 +219,12 @@ const tetrominos = {
             count = 0;
             
 
-            //place new tetromino after 5 frames
-            if (++count > 5) {
-
-                tetromino.row++;
-                placeTetromino();
-            }
-                
-            
-        }
+      // new piece after 5 frames
+      if (!isValidMove(tetromino.matrix, tetromino.row, tetromino.col)) {
+        tetromino.row--;
+        placeTetromino();
+      }
+    }
 
         context.fillStyle = colors[tetromino.name];
         
@@ -238,6 +239,8 @@ const tetrominos = {
         } 
     }
   }
+
+
   
   //Keyboard Movement
   document.addEventListener('keydown', function(e) {
@@ -334,3 +337,15 @@ function restartGame() {
 function gamePause() {
     cancelAnimationFrame(rAF);
 }
+
+// Mouse Click
+window.addEventListener('mousedown', function(e) {
+    row = e.pageX;
+    col = e.pageY;
+})
+
+window.addEventListener('mouseup', function(e) {
+    row = false;
+    col = false;
+})
+
