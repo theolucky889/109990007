@@ -6,6 +6,18 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Mouse Click
+window.addEventListener('mousedown', function(e) {
+    row = e.pageX;
+    col = e.pageY;
+})
+
+window.addEventListener('mouseup', function(e) {
+    row = false;
+    col = false;
+})
+
+
 //generate a tetromino sequence
 //tetromino = shapes of blocks in tetris
 function generateSequence() {
@@ -280,6 +292,7 @@ const tetrominos = {
     }
   });
 
+
   //Gamepad Movement
   //move right
  function moveRight() {
@@ -338,14 +351,33 @@ function gamePause() {
     cancelAnimationFrame(rAF);
 }
 
-// Mouse Click
-window.addEventListener('mousedown', function(e) {
-    row = e.pageX;
-    col = e.pageY;
-})
+/* make tetromino border but failed :( 
 
-window.addEventListener('mouseup', function(e) {
-    row = false;
-    col = false;
-})
 
+this.tetroBorder = function () {
+    tetromino = playfield;
+    tetromino.strokeStyle = "red";
+
+if (border_id == this.id) {
+    if (this.tetromino == 'O') {
+        tetromino.strokeRect(cellRow, cellCol, 90, 90);
+    } else if (this.tetromino == 'C') {
+    tetromino.strokeRect(cellRow, cellCol, 90, 90);
+    } else if (this.tetromino == 'S') {
+    tetromino.strokeRect(cellRow, cellCol, 90, 90);
+    } else if (this.tetromino == 'I') {
+    tetromino.strokeRect(cellRow, cellCol, 90, 90);
+    } else if (this.tetromino == 'E') {
+    tetromino.strokeRect(cellRow, cellCol, 90, 90);
+    } else if (this.tetromino == 'L') {
+    tetromino.strokeRect(cellRow, cellCol, 90, 90);
+    } else if (this.tetromino == 'Z') {
+    tetromino.strokeRect(cellRow, cellCol, 90, 90);
+    } else if (this.tetromino == 'J') {
+    tetromino.strokeRect(cellRow, cellCol, 90, 90);
+    } else if (this.tetromino == 'T') {
+    tetromino.strokeRect(cellRow, cellCol, 90, 90);
+    }
+}
+}
+*/
