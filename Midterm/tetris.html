@@ -8,19 +8,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas width="320" height="640" id="game"></canvas>
+    <section>
+        <div>
+            <p>Score : 0</p>
+        </div>
+    <canvas width="320" height="160" id="game"></canvas>
+    </section>
     <script src="tetris.js"></script>
+    
 <section>
             <div>    
-                <button onclick="moveLeft()">Left</button>
-                <button onclick="moveRight()">Right</button>
-                <button onclick="moveDown()">Down</button>
-                <button onclick="rotateTetromino()">Rotate</button>
+                <button class="left" onclick="moveLeft()">&laquo; Left</button>
+                <button class="right" onclick="moveRight()">Right &raquo;</button>
+                <button class="down" onclick="moveDown()">Down</button>
+                <button class="rotate" onclick="rotateTetromino()">Rotate</button>
             </div>
             <div>
-                <button onclick="restartGame()">Restart</button>
-                <button onclick="startGame()">Start Game</button>
-                <button onclick="gamePause()">Pause</button>
+                <button class="restart" onclick="restartGame()">Restart</button>
+                <button class="start" onclick="startGame()">Start Game</button>
+                <button class="pause" onclick="gamePause()">Pause</button>
             </div>
 </section>
 </body>
